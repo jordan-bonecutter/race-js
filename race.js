@@ -16,14 +16,17 @@ async function store(o, i) {
 }
 
 async function increment(o) {
+  await o.mutex.lock()
   const i = await load(o);
   const iPlusOne = await add(i, 1);
   await store(o, iPlusOne);
+  o.mutex.unlock()
 }
 
 setTimeout(() => {
   const myObject = {
     number: 0,
+    mutex: new Mutex(),
   };
 
   const numberSpan = document.getElementById("number-span");
