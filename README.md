@@ -10,7 +10,7 @@ loop knowledge we can fix that!
 ## But how?
 It's simple, really. One way to think of `async/await` is that `await` allows us to
 hint to the JS runtime that it's a good time to do a context switch. All we have to do
-is tell JS it's a good time to context switch when it's really a bad thing. Devious!
+is tell JS it's a good time to context switch when it's really a bad time. Devious!
 
 ## How can we fix it?
 How else do we fix race conditions other than mutexes (mutices?)! We used our knowledge
@@ -20,5 +20,5 @@ Programming in JS never felt so good.
 ## What's in this repo?
 Explore the commit history on master to watch JS slowly transform into an async-y language
 to a thread-y language. It displays a simple website with a button which calls increment
-on a counter 100x. However, the counter doesn't seems to work. Follow our journey as we
+on a counter 100x. However, the counter doesn't seem to work. Follow our journey as we
 spiral down into synchronous hell.
